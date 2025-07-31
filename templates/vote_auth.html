@@ -1,0 +1,21 @@
+<!-- templates/vote_auth.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote Authentication</title>
+</head>
+<body>
+    <h2>Enter Voting Details</h2>
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        <label>Election ID:</label>
+        <input type="text" name="election_id" required><br><br>
+        <label>Voter ID:</label>
+        <input type="text" name="voter_id" required><br><br>
+        <button type="submit">Proceed to Vote</button>
+    </form>
+</body>
+</html>

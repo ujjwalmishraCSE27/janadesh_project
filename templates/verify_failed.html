@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OTP Verification Failed</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #4b0000, #1e1e1e);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 0, 0, 0.1);
+      padding: 40px 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+      max-width: 400px;
+      width: 100%;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    .icon {
+      font-size: 70px;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+      animation: bounce 1s ease;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    button {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #ff7373;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0%   { transform: scale(0.5); opacity: 0; }
+      60%  { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      .icon {
+        font-size: 60px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p, button {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">❌</div>
+    <h1>Verification Failed</h1>
+    <p>The OTP you entered was incorrect. Please try again.</p>
+    <form action="/" method="get">
+        <button type="submit">Try Again</button>
+    </form>
+  </div>
+</body>
+</html>

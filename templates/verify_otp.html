@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OTP Verification</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .otp-container {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .otp-inputs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .otp-inputs input {
+      width: 45px;
+      height: 50px;
+      border-radius: 12px;
+      border: none;
+      background-color: #ffffffcc;
+      text-align: center;
+      font-size: 1.4rem;
+      color: #333;
+    }
+
+    .otp-inputs input:focus {
+      outline: none;
+      box-shadow: 0 0 8px #00d4ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background-color: #7289da;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #889cf2;
+    }
+
+    .resend {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      color: #eee;
+    }
+
+    .resend a {
+      color: #c9d1ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .otp-inputs {
+        gap: 8px;
+      }
+      .otp-inputs input {
+        width: 40px;
+        height: 45px;
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="otp-container">
+    <h2>Enter OTP</h2>
+    <form method="POST" onsubmit="return joinOTP()">
+      <div class="otp-inputs">
+        <input type="text" maxlength="1" required />
+        <input type="text" maxlength="1" required />
+        <input type="text" maxlength="1" required />
+        <input type="text" maxlength="1" required />
+        <input type="text" maxlength="1" required />
+        <input type="text" maxlength="1" required />
+      </div>
+      <input type="hidden" name="otp" id="otp" />
+      <button type="submit">Verify</button>
+    </form>
+    <div class="resend">
+      Didn't receive the code? <a href="#">Resend Code</a>
+    </div>
+  </div>
+
+  <script>
+    const inputs = document.querySelectorAll('.otp-inputs input');
+
+    inputs.forEach((input, index) => {
+      input.addEventListener('input', () => {
+        if (input.value.length === 1 && index < inputs.length - 1) {
+          inputs[index + 1].focus();
+        }
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === "Backspace" && !input.value && index > 0) {
+          inputs[index - 1].focus();
+        }
+      });
+    });
+
+    function joinOTP() {
+      const otp = Array.from(inputs).map(input => input.value).join('');
+      document.getElementById('otp').value = otp;
+      return true;
+    }
+  </script>
+</body>
+</html>

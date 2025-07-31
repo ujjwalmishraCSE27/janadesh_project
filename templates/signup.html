@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Secure Voting System</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+      background-color: #f5f7fa;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      height: 100vh;
+    }
+
+    .left-panel {
+      flex: 1;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 60px;
+      animation: fadeIn 1s ease;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+
+    .title {
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .title-cont {
+      display: flex;
+      gap: 2px;
+    }
+
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 2.4rem;
+      margin-left: 2px;
+      animation: typing 4s linear infinite, blink 0.7s step-end infinite, colorCycle 12s linear infinite;
+      font-weight: bold;
+    }
+
+    @keyframes typing {
+      0%   { width: 0ch; }
+      40%  { width: 4ch; }
+      60%  { width: 4ch; }
+      100% { width: 0ch; }
+    }
+
+    @keyframes colorCycle {
+      0%   { color: orange; }
+      33%  { color: white; }
+      66%  { color: green; }
+      100% { color: orange; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50%      { border-color: #fff; }
+    }
+
+    .right-panel {
+      flex: 1;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      animation: slideIn 1s ease;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-box h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #203a43;
+    }
+
+    .form-box input,
+    .form-box select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 20px;
+    }
+
+    .form-box input:focus,
+    .form-box select:focus {
+      outline: none;
+      border-color: #00d4ff;
+      box-shadow: 0 0 5px #00d4ff;
+    }
+
+    .form-box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #203a43;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .form-box button:hover {
+      background-color: #2c5364;
+    }
+
+    .signup-text {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      text-align: center;
+      color: #555;
+    }
+
+    .signup-text a {
+      color: #203a43;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+
+    .phone-input-wrapper {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 12px 0;
+      height: 50px;
+    }
+
+    .country-code {
+      background-color: #f0f0f0;
+      padding: 21px;
+      border-right: 1px solid #ccc;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .phone-input-wrapper input {
+      flex: 1;
+      border: none;
+      padding: 15px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-panel, .right-panel {
+        flex: none;
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+      }
+
+      .logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <div class="logo">eVote</div>
+      <div class="title-cont">
+        <div class="title">Join</div>
+        <div class="typewriter">Now</div>
+      </div>
+      <p class="subtitle">Create your account to access our secure and transparent voting system. It's quick, simple, and safe.</p>
+    </div>
+    <div class="right-panel">
+      <div class="form-box">
+        <h2>Sign Up</h2>
+        <form method="POST" onsubmit="return prepareSubmission()">
+          <input name="full_name" placeholder="Full Name" required />
+
+          <div class="phone-input-wrapper">
+            <span class="country-code">+91</span>
+            <input type="text" id="phone_raw" placeholder="Phone Number" required pattern="\d{10}" />
+          </div>
+          <input type="hidden" name="phone" id="phone" />
+
+          <input type="date" id="dob" name="dob_raw" required min="1947-01-01" max="2007-12-31" />
+          <input type="hidden" name="dob" id="dob_formatted" />
+
+          <select name="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <select name="religion" required>
+            <option value="" disabled selected>Select Religion</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Muslim">Muslim</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <button type="submit">Sign Up</button>
+        </form>
+        <div class="signup-text">
+          Already have an account? <a href="/">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function prepareSubmission() {
+      const rawPhone = document.getElementById('phone_raw').value.trim();
+      document.getElementById('phone').value = '+91' + rawPhone;
+
+      const rawDob = document.getElementById('dob').value;
+      if (rawDob) {
+        const [yyyy, mm, dd] = rawDob.split("-");
+        document.getElementById('dob_formatted').value = `${dd}/${mm}/${yyyy}`;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>
