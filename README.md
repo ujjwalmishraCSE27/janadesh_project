@@ -1,3 +1,7 @@
+
+![WhatsApp Image 2025-07-31 at 20 16 50_df4ceb63](https://github.com/user-attachments/assets/6e51f1d2-c14e-4a49-94b6-4a82449bf256)
+
+
 # Janadesh Project
 
 Janadesh is a secure backend system designed to support an online voting platform. It provides essential features such as user authentication, candidate and voter management, real-time vote casting, and result calculation. The project is built primarily with Python and Flask, focusing on security, extensibility, and ease of use.
@@ -97,6 +101,9 @@ git push origin feature/your-feature-name
 
 text
 6. Open a Pull Request on GitHub.
+
+![WhatsApp Image 2025-07-31 at 20 16 50_f72c6bee](https://github.com/user-attachments/assets/e300f833-5512-4b7c-852b-79e1dd35a77d)
+
 
 ## License
 
